@@ -186,12 +186,6 @@ export default function Index(
 							fetching={fetching}
 						/>
 					) : null}
-					{/* Internal link for SEO - moved to end of blog */}
-					<div className="my-4 text-center">
-						<Link href="/newsletter" className="text-blue-600 underline hover:text-blue-800">
-							Subscribe to our newsletter
-						</Link>
-					</div>
 				</div>
 				{publication ? (
 					<PublicationFooter
