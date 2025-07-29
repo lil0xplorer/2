@@ -1,5 +1,4 @@
 import { useRef, useMemo, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { twJoin } from 'tailwind-merge';
 import moment from 'dayjs';
@@ -19,11 +18,6 @@ import { PostFullFragment } from '../generated/graphql';
 
 moment.extend(relativeTime);
 moment.extend(localizedFormat);
-
-const PublicationSubscribeStandOut = dynamic(
-  () => import('./publication-subscribe-standout'),
-  { ssr: false },
-);
 
 function PostView(props: any) {
   const postContentEle = useRef<HTMLDivElement>(null);
@@ -204,10 +198,6 @@ function PostView(props: any) {
                     />
                     )}
                 </div>
-
-                {post.publication && post.publication.features.newsletter.isEnabled && (
-                    <PublicationSubscribeStandOut />
-                )}
 
                 {post?.tags && post.tags.length > 0 && (
                     <div className="mb-5 flex w-full flex-row flex-wrap justify-center md:mb-0">
