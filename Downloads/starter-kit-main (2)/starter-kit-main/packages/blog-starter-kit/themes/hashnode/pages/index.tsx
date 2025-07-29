@@ -25,6 +25,7 @@ import FeaturedPosts from '../components/features-posts';
 import PublicationFooter from '../components/publication-footer';
 import PublicationMeta from '../components/publication-meta';
 import { resizeImage } from '../utils/image';
+import Link from 'next/link';
 
 const REVALIDATION_INTERVAL_POST_VIEWS_ACTIVE = 60 * 60; // 1 hour
 const REVALIDATION_INTERVAL = 60 * 60 * 24 * 30; // 1 month
@@ -187,7 +188,9 @@ export default function Index(
 					) : null}
 					{/* Internal link for SEO - moved to end of blog */}
 					<div className="my-4 text-center">
-						<a href="/newsletter" className="text-blue-600 underline hover:text-blue-800">Subscribe to our newsletter</a>
+						<Link href="/newsletter" className="text-blue-600 underline hover:text-blue-800">
+							Subscribe to our newsletter
+						</Link>
 					</div>
 				</div>
 				{publication ? (
