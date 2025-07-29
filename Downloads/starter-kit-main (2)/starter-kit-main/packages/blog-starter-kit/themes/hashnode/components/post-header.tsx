@@ -38,10 +38,6 @@ type Props = {
 const PostFloatingMenu = dynamic(() => import('./post-floating-bar'), { ssr: false });
 const PostCommentsSidebar = dynamic(() => import('./post-comments-sidebar'), { ssr: false });
 
-const PublicationSubscribeStandOut = dynamic(() => import('./publication-subscribe-standout'), {
-	ssr: false,
-});
-
 export const PostHeader = ({ post, morePosts }: Props) => {
 	const postContentEle = useRef<HTMLDivElement>(null);
 	const [selectedFilter, setSelectedFilter] = useState('totalReactions');
